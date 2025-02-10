@@ -30,7 +30,7 @@
     <webservices.rest.version>2.48.0-SNAPSHOT</webservices.rest.version>
     <addresshierarchy.version>2.19.0</addresshierarchy.version>
     <idgen.version>4.14.0</idgen.version>
-    <legacyui.version>1.22.0-SNAPSHOT</legacyui.version>
+    <legacyui.version>1.22.0-sigdep-SNAPSHOT</legacyui.version>
     <metadatamapping.version>1.6.0</metadatamapping.version>
     <openconceptlab.version>2.4.0</openconceptlab.version>
     <attachments.version>3.6.0</attachments.version>
@@ -54,6 +54,14 @@
     <!-- Stock Management and Billing -->
     <stockmanagement.version>2.0.2-SNAPSHOT</stockmanagement.version>
     <billing.version>1.2.0-SNAPSHOT</billing.version>
+    <!-- SIGDEP -->
+    <biologicalorder.version>1.0.3-SNAPSHOT</biologicalorder.version>
+    <clientregistry.version>1.1.8-SNAPSHOT</clientregistry.version>
+    <hivscreening.version>1.1.0-SNAPSHOT</hivscreening.version>
+    <labonfhir.version>1.4.0-SNAPSHOT</labonfhir.version>
+    <ptme.version>1.2.0-SNAPSHOT</ptme.version>
+    <supply.version>1.0.2</supply.version>
+
   </properties>
 
   <dependencies>
@@ -228,7 +236,98 @@
       <version>${billing.version}</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>biologicalorder-omod</artifactId>
+      <version>${biologicalorder.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>clientregistry-omod</artifactId>
+      <version>${clientregistry.version}</version>
+      <scope>provided</scope>
+    </dependency>
+        <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>hivscreening-omod</artifactId>
+      <version>${hivscreening.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>labonfhir-omod</artifactId>
+      <version>${labonfhir.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>ptme-omod</artifactId>
+      <version>${ptme.version}</version>
+      <scope>provided</scope>
+    </dependency>
+        <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>supply-omod</artifactId>
+      <version>${supply.version}</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
+
+<repositories>
+    <repository>
+			<id>uwdigi-repo-central</id>
+      <name>DIGI Public Repository</name>
+      <url>https://packages.uwdigi.org/artifactory/public</url>
+		</repository>
+    <repository>
+      <id>openmrs-repo</id>
+      <name>OpenMRS Nexus Repository</name>
+      <url>https://mavenrepo.openmrs.org/public</url>
+    </repository>
+    <repository>
+      <id>openmrs-releases</id>
+      <name>OpenMRS Release Repository</name>
+      <url>https://mavenrepo.openmrs.org/releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>openmrs-snapshots</id>
+      <name>OpenMRS Snapshots Repository</name>
+      <url>https://mavenrepo.openmrs.org/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>mks-nexus-public</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
+    </repository>
+    <repository>
+      <id>mks-nexus-snapshots</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>interval:10080</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <build>
     <plugins>
